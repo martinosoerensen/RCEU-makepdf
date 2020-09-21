@@ -18,4 +18,10 @@ echo.
 echo Manual dir   = %~dp1
 echo TIF/JPG dir  = %~dp2
 
+rem Check if volume makepdf_persist exists and create it if not
+docker volume inspect makepdf_persist >nul
+IF NOT "%ERRORLEVEL%"=="0" (
+ echo Creating docker volume makepdf_persist, used to store settings
+ docker volume create --name makepdf_persist >nul
+)
 docker run -it --rm --volume %DRIVE%\:/app/mnt --volume makepdf_persist:/app/data:rw martinosoerensen/rceu-makepdf "%MANUALPATH1%" "%IMAGEDIR1%"
