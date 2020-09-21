@@ -86,5 +86,5 @@ COPY --from=builder /app/makepdf.sh /app/pdfsimp.py /app/brought_to_you_by.pdf /
 
 RUN chmod +x makepdf.sh
 
-ENTRYPOINT ["./makepdf.sh"]
+ENTRYPOINT ["sh","./makepdf.sh"]
 #ENTRYPOINT /bin/bash
