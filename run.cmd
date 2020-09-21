@@ -18,4 +18,4 @@ echo.
 echo Manual dir   = %~dp1
 echo TIF/JPG dir  = %~dp2
 
-docker run -it --rm --volume %DRIVE%\:/app/mnt --volume makepdf_persist:/app/data:rw makepdf "%MANUALPATH1%" "%IMAGEDIR1%"
+docker run -it --rm --volume %DRIVE%\:/app/mnt --volume makepdf_persist:/app/data:rw martinosoerensen/rceu-makepdf "%MANUALPATH1%" "%IMAGEDIR1%"
