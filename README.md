@@ -1,2 +1,2 @@
 # RCEU-makepdf
-Script used by RCEU to process ScanTailor output into a PDF file
+Script used by www.retro-commodore.eu to process ScanTailor output into a PDF file
