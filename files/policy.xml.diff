@@ -1,0 +1,4 @@
+94c94
+<   <policy domain="coder" rights="none" pattern="PDF" />
+---
+>   <!-- <policy domain="coder" rights="none" pattern="PDF" /> -->
