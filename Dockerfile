@@ -74,7 +74,8 @@ RUN ln -fs /usr/share/zoneinfo/Europe/Copenhagen /etc/localtime && \
   pdftk \
   poppler-utils \
   python \
-  bc
+  bc \
+  dos2unix
 #unpaper \
 
 WORKDIR /app
@@ -84,7 +85,7 @@ COPY --from=builder /usr/local/bin/ /usr/local/bin/
 COPY --from=builder /etc/ImageMagick-6/policy.xml /etc/ImageMagick-6
 COPY --from=builder /app/makepdf.sh /app/pdfsimp.py /app/brought_to_you_by.pdf /app/repaginate_booklet_scan.php /app/
 
-RUN chmod +x makepdf.sh
+RUN dos2unix makepdf.sh pdfsimp.py repaginate_booklet_scan.php && chmod +x makepdf.sh
 
-ENTRYPOINT ["/bin/bash","./makepdf.sh"]
+ENTRYPOINT ["./makepdf.sh"]
 #ENTRYPOINT /bin/bash
