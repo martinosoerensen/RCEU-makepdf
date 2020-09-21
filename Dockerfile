@@ -82,10 +82,9 @@ WORKDIR /app
 COPY --from=builder /usr/local/lib/ /usr/local/lib/
 COPY --from=builder /usr/local/bin/ /usr/local/bin/
 COPY --from=builder /etc/ImageMagick-6/policy.xml /etc/ImageMagick-6
-COPY --from=builder /app/cli.sh /app/makepdf.sh /app/pdfsimp.py /app/brought_to_you_by.pdf /app/repaginate_booklet_scan.php /app/
+COPY --from=builder /app/makepdf.sh /app/pdfsimp.py /app/brought_to_you_by.pdf /app/repaginate_booklet_scan.php /app/
 
 RUN chmod +x makepdf.sh
 
 ENTRYPOINT ["./makepdf.sh"]
-#ENTRYPOINT ["./cli.sh"]
 #ENTRYPOINT /bin/bash
