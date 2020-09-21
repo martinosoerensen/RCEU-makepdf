@@ -8,9 +8,9 @@ Will produce a lossless PDF (relative to formats of input files) using different
 - Local folder with tif/jpg/png files (ScanTailor output folder)
 - Docker configured to allow access to local drive with source folder
 
-## Get image from DockerHub:
+## How to build Docker image from this repository:
+`docker build -t martinosoerensen/rceu-makepdf https://github.com/martinosoerensen/RCEU-makepdf.git`
+## Alternatively, get the image from dockerhub:
 `docker pull martinosoerensen/rceu-makepdf:latest`
 
-## How to manually build and run:
-- build.cmd - Builds the Docker image using Docker for Windows
-- run.cmd - Starts the Docker image
+To use the docker image, use run.cmd from a Windows command prompt and follow the guide.
